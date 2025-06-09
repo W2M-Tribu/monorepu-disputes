@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: w2m-disputes
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: w2m-disputes-service
+            client-secret: 4oGTiN1LTLZHGegE0X8Uuh9IMsRe7gFI
+            authorization-grant-type: client_credentials
+            provider: keycloak
+        provider:
+          keycloak:
+            token-uri: http://localhost:8081/realms/w2m-disputes/protocol/openid-connect/token
+
+server:
+  port: 8090
