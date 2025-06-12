@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: edge-service
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: edge-service
+            client-secret: fG7ulwLuFZ8wO5MueHbZq36m0KTpbG8T
+            authorization-grant-type: client_credentials
+            provider: keycloak
+        provider:
+          keycloak:
+            token-uri: http://localhost:8081/realms/w2m-disputes/protocol/openid-connect/token

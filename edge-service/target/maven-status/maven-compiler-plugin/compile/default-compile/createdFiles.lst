@@ -1,0 +1,7 @@
+es\w2m\finance\disputes\edgeservice\client\SnowflakeClient.class
+es\w2m\finance\disputes\edgeservice\controller\SnowflakeController.class
+es\w2m\finance\disputes\edgeservice\config\SecurityConfig.class
+es\w2m\finance\disputes\edgeservice\security\KeycloakTokenService.class
+es\w2m\finance\disputes\edgeservice\controller\DisputeMockController.class
+es\w2m\finance\disputes\edgeservice\config\OAuth2ClientConfig.class
+es\w2m\finance\disputes\edgeservice\EdgeServiceApplication.class

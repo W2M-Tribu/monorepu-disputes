@@ -11,15 +11,18 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    /**
+     * SECURITY CONFIGURATION FOR TESTING PURPOSES ONLY.
+     * DISABLES ALL SECURITY AND PERMITS ALL REQUESTS.
+     * THIS SHOULD BE CHANGED FOR PRODUCTION ENVIRONMENTS TO ENABLE PROPER SECURITY.
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/test-snowflake").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .csrf(AbstractHttpConfigurer::disable); // útil en llamadas POST sin sesión
-
+                        .anyRequest().permitAll()
+                );
         return http.build();
     }
 }

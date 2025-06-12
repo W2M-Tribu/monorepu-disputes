@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  wiremock-snowflake:
+    build: ./wiremock-snowflake
+    ports:
+      - "8080:8080"
+
+  edge-service:
+    build: ./edge-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - wiremock-snowflake
+
+  sap-mock:
+    build: ./sap-mock
+    ports:
+      - "3001:3001"
+
+  ia-mock:
+    build: ./ia-mock
+    ports:
+      - "3002:3002"
+
+  w2m-disputes-back:
+    build: ./w2m-disputes-back
+    ports:
+      - "8090:8090"
+    depends_on:
+      - edge-service
+      - sap-mock
+      - ia-mock

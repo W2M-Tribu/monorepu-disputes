@@ -1,0 +1,7 @@
+es\w2m\finance\disputes\w2mdisputes\config\OAuth2ClientConfig.class
+es\w2m\finance\disputes\w2mdisputes\config\SecurityConfig.class
+es\w2m\finance\disputes\w2mdisputes\controller\DisputeController.class
+es\w2m\finance\disputes\w2mdisputes\controller\SnowflakeController.class
+es\w2m\finance\disputes\w2mdisputes\W2mDisputesApplication.class
+es\w2m\finance\disputes\w2mdisputes\security\KeycloakTokenService.class
+es\w2m\finance\disputes\w2mdisputes\client\EdgeServiceClien.class

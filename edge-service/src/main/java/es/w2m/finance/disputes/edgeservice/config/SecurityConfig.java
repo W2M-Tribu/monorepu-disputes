@@ -13,14 +13,14 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        System.out.println("⚠️ Security is DISABLED for all routes in edge-service (mock setup)");
+
         http
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/test-snowflake").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .csrf(AbstractHttpConfigurer::disable); // útil en llamadas POST sin sesión
+                        .anyRequest().permitAll()
+                );
 
         return http.build();
     }
 }
-
