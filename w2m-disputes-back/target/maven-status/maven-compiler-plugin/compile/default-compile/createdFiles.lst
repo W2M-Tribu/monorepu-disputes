@@ -1,7 +1,14 @@
+es\w2m\finance\disputes\w2mdisputes\model\SupplierDispute.class
+es\w2m\finance\disputes\w2mdisputes\controller\DisputeController.class
+es\w2m\finance\disputes\w2mdisputes\repository\CustomerDisputeRepository.class
+es\w2m\finance\disputes\w2mdisputes\model\CustomerDispute$CustomerDisputeBuilder.class
+es\w2m\finance\disputes\w2mdisputes\client\EdgeServiceClien.class
+es\w2m\finance\disputes\w2mdisputes\model\CustomerDispute.class
+es\w2m\finance\disputes\w2mdisputes\service\DisputeExcelImportService.class
 es\w2m\finance\disputes\w2mdisputes\config\OAuth2ClientConfig.class
 es\w2m\finance\disputes\w2mdisputes\config\SecurityConfig.class
-es\w2m\finance\disputes\w2mdisputes\controller\DisputeController.class
-es\w2m\finance\disputes\w2mdisputes\controller\SnowflakeController.class
+es\w2m\finance\disputes\w2mdisputes\controller\ExcelController.class
 es\w2m\finance\disputes\w2mdisputes\W2mDisputesApplication.class
 es\w2m\finance\disputes\w2mdisputes\security\KeycloakTokenService.class
-es\w2m\finance\disputes\w2mdisputes\client\EdgeServiceClien.class
+es\w2m\finance\disputes\w2mdisputes\repository\SupplierDisputeRepository.class
+es\w2m\finance\disputes\w2mdisputes\model\SupplierDispute$SupplierDisputeBuilder.class

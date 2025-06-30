@@ -31,3 +31,18 @@ services:
       - edge-service
       - sap-mock
       - ia-mock
+
+  postgres:
+    image: postgres:15
+    container_name: w2m-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: disputesdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
