@@ -1,0 +1,40 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/v2/statements",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer abc123"
+      },
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "contains": "SELECT"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "statementHandle": "01a9d3d1-abc1-45f9-b3dd-example",
+      "resultSetMetaData": {
+        "numRows": 2,
+        "columns": [
+          {"name": "ID", "type": "NUMBER"},
+          {"name": "NAME", "type": "TEXT"},
+          {"name": "ACTIVE", "type": "BOOLEAN"}
+        ]
+      },
+      "data": [
+        [1, "Alice", true],
+        [2, "Bob", true]
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

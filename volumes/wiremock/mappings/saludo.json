@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/saludo"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "mensaje": "¡Hola desde MockServe!"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -39,13 +39,14 @@ public class DisputeController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getDispute(@PathVariable String id) {
         // Llamada al servicio edge (simula Snowflake)
-        Map<?, ?> dispute = restTemplate.getForObject("http://edge-service:8080/dispute/" + id, Map.class);
+        //Map<?, ?> dispute = restTemplate.getForObject("http://localhost:8081/dispute/" + id, Map.class);
+        Map<?, ?> dispute = restTemplate.getForObject("http://localhost:8081/test-snowflake", Map.class);
 
         // Llamada al mock de SAP para obtener el estado de la disputa
-        Map<?, ?> sapStatus = restTemplate.getForObject("http://sap-mock:3001/status", Map.class);
+        Map<?, ?> sapStatus = restTemplate.getForObject("http://localhost:3001/status", Map.class);
 
         // Llamada al mock de IA para obtener la categoría de la disputa
-        Map<?, ?> aiCategory = restTemplate.getForObject("http://ia-mock:3002/category", Map.class);
+        Map<?, ?> aiCategory = restTemplate.getForObject("http://localhost:3002/category", Map.class);
 
         // Composición final de la respuesta con los datos agregados
         return ResponseEntity.ok(Map.of(
