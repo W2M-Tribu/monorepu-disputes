@@ -266,7 +266,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8082/api/v1/status",
+			"name": "SAP",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -287,7 +287,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8082/api/v1/category",
+			"name": "IA",
 			"request": {
 				"method": "GET",
 				"header": [],
