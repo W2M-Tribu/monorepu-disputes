@@ -1,1 +1,4 @@
 *.xml
+/volumes/keycloak/keycloak_data/h2/keycloakdb.lock.db
+/volumes/keycloak/keycloak_data/h2/keycloakdb.mv.db
+/volumes/keycloak/keycloak_data/h2/keycloakdb.trace.db
