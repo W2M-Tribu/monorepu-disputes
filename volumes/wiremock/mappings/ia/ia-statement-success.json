@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/category"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "category": "incorrect number of vacation days"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

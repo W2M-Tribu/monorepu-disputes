@@ -15,19 +15,12 @@ services:
     volumes:
       - ./volumes/wiremock/mappings/sap:/home/wiremock/mappings
 
-  ia-mock:
-    build: ./ia-mock
+  wiremock-ia:
+    image: wiremock/wiremock:latest
     ports:
-      - "3002:3002"
-
-#  w2m-disputes-back:
-#    build: ./w2m-disputes-back
-#    ports:
-#      - "8090:8090"
-#    depends_on:
-#      - edge-service
-#      - sap-mock
-#      - ia-mock
+      - "3002:8080"
+    volumes:
+      - ./volumes/wiremock/mappings/ia:/home/wiremock/mappings
 
   postgres:
     image: postgres:15
