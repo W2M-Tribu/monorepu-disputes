@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ab301960-4889-44c2-867f-42c198f4921e",
+		"_postman_id": "cdaa6f02-025f-476f-8fc9-6f8c0094a4bf",
 		"name": "W2M Disputes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "33844236"
+		"_exporter_id": "39902897"
 	},
 	"item": [
 		{
@@ -260,6 +260,48 @@
 					"path": [
 						"dispute",
 						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/api/v1/status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/api/v1/category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"category"
 					]
 				}
 			},

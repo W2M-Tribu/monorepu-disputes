@@ -1,20 +1,4 @@
-version: '3.8'
-
 services:
-  #wiremock-snowflake:
-  #  image: wiremock/wiremock:latest
-  #  ports:
-  #    - "8082:8080"
-  #  volumes:
-  #    - ./volumes/wiremock/mappings:/home/wiremock/mappings
-  #    - ./volumes/wiremock/__files:/home/wiremock/__files
-
-#  edge-service:
-#    build: ./edge-service
-#    ports:
-#      - "8081:8081"
-#    depends_on:
-#      - wiremock-snowflake
 
   mockserver:
     image: node:20-alpine
@@ -29,22 +13,6 @@ services:
       sh -c "npm i -g mockserver@latest &&
              mockserver -p 8080 -m /mocks"
     restart: unless-stopped
-
-  sap-mock:
-    build: ./sap-mock
-  wiremock-sap:
-    image: wiremock/wiremock:latest
-    ports:
-      - "3001:8080"
-    volumes:
-      - ./volumes/wiremock/mappings/sap:/home/wiremock/mappings
-
-  wiremock-ia:
-    image: wiremock/wiremock:latest
-    ports:
-      - "3002:8080"
-    volumes:
-      - ./volumes/wiremock/mappings/ia:/home/wiremock/mappings
 
   postgres:
     image: postgres:15
