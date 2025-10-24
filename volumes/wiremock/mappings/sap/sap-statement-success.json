@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/status"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "status": "paused"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

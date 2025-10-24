@@ -8,17 +8,12 @@ services:
     volumes:
       - ./volumes/wiremock/mappings/snowflake:/home/wiremock/mappings
 
-#  edge-service:
-#    build: ./edge-service
-#    ports:
-#      - "8081:8081"
-#    depends_on:
-#      - wiremock-snowflake
-
-  sap-mock:
-    build: ./sap-mock
+  wiremock-sap:
+    image: wiremock/wiremock:latest
     ports:
-      - "3001:3001"
+      - "3001:8080"
+    volumes:
+      - ./volumes/wiremock/mappings/sap:/home/wiremock/mappings
 
   ia-mock:
     build: ./ia-mock
