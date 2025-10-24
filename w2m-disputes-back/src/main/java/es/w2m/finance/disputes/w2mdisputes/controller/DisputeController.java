@@ -43,10 +43,10 @@ public class DisputeController {
         Map<?, ?> dispute = restTemplate.getForObject("http://localhost:8081/test-snowflake", Map.class);
 
         // Llamada al mock de SAP para obtener el estado de la disputa
-        Map<?, ?> sapStatus = restTemplate.getForObject("http://localhost:3001/status", Map.class);
+        Map<?, ?> sapStatus = restTemplate.getForObject("http://localhost:8082/api/v1/status", Map.class);
 
         // Llamada al mock de IA para obtener la categoría de la disputa
-        Map<?, ?> aiCategory = restTemplate.getForObject("http://localhost:3002/category", Map.class);
+        Map<?, ?> aiCategory = restTemplate.getForObject("http://localhost:8082/api/v1/category", Map.class);
 
         // Composición final de la respuesta con los datos agregados
         return ResponseEntity.ok(Map.of(
