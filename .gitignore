@@ -3,3 +3,4 @@ w2m-disputes-back\target
 */.idea/*
 volumes/keycloak/keycloak_data/*
 *.xml
+*.db
