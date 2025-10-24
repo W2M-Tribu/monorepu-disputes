@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  wiremock-snowflake:
-    image: wiremock/wiremock:latest
-    ports:
-      - "8082:8080"
-    volumes:
-      - ./volumes/wiremock/mappings:/home/wiremock/mappings
-      - ./volumes/wiremock/__files:/home/wiremock/__files
+  #wiremock-snowflake:
+  #  image: wiremock/wiremock:latest
+  #  ports:
+  #    - "8082:8080"
+  #  volumes:
+  #    - ./volumes/wiremock/mappings:/home/wiremock/mappings
+  #    - ./volumes/wiremock/__files:/home/wiremock/__files
 
 #  edge-service:
 #    build: ./edge-service
@@ -15,6 +15,20 @@ services:
 #      - "8081:8081"
 #    depends_on:
 #      - wiremock-snowflake
+
+  mockserver:
+    image: node:20-alpine
+    container_name: mockserver
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./mocks:/mocks
+    environment:
+      - MOCK_HEADERS=Authorization,Content-Type
+    command: >
+      sh -c "npm i -g mockserver@latest &&
+             mockserver -p 8080 -m /mocks"
+    restart: unless-stopped
 
   sap-mock:
     build: ./sap-mock
