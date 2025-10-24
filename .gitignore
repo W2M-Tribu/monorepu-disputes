@@ -1,0 +1,6 @@
+w2m-disputes-back\target
+edge-service/target
+*/.idea/*
+volumes/keycloak/keycloak_data/*
+*.xml
+*.db
