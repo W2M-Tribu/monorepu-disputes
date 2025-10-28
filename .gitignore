@@ -1,5 +1,5 @@
-w2m-disputes-back\target
-edge-service/target
+w2m-disputes-back/target
+snowflake-api/target
 */.idea/*
 volumes/keycloak/keycloak_data/*
 *.xml
