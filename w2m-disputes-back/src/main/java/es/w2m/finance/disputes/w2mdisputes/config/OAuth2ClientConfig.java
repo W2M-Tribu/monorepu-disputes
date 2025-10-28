@@ -2,12 +2,9 @@ package es.w2m.finance.disputes.w2mdisputes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.oauth2.client.AuthorizedClientServiceOAuth2AuthorizedClientManager;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClientProvider;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClientProviderBuilder;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
+import org.springframework.security.oauth2.client.*;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class OAuth2ClientConfig {
@@ -28,5 +25,30 @@ public class OAuth2ClientConfig {
         manager.setAuthorizedClientProvider(provider);
 
         return manager;
+    }
+
+    @Bean
+    public RestTemplate oauthRestTemplate(OAuth2AuthorizedClientManager manager) {
+        RestTemplate rt = new RestTemplate();
+        rt.getInterceptors().add((req, body, exec) -> {
+            OAuth2AuthorizeRequest authReq = OAuth2AuthorizeRequest
+                    .withClientRegistrationId("keycloak")
+                    .principal("w2m-disputes-service")
+                    .build();
+
+            OAuth2AuthorizedClient client = manager.authorize(authReq);
+            if (client == null || client.getAccessToken() == null) {
+                throw new IllegalStateException("Could not obtain access token (client_credentials).");
+            }
+
+            req.getHeaders().setBearerAuth(client.getAccessToken().getTokenValue());
+            return exec.execute(req, body);
+        });
+        return rt;
+    }
+
+    @Bean
+    public RestTemplate plainRestTemplate() {
+        return new RestTemplate();
     }
 }

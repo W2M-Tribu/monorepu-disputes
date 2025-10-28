@@ -8,7 +8,7 @@ spring:
         registration:
           keycloak:
             client-id: w2m-disputes-service
-            client-secret: 4oGTiN1LTLZHGegE0X8Uuh9IMsRe7gFI
+            client-secret: LbBHRR5M6e5XiuTlYBEONGE8yqMurWCq
             authorization-grant-type: client_credentials
             provider: keycloak
         provider:
