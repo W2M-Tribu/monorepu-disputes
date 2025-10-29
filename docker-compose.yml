@@ -38,7 +38,6 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
     volumes:
-      - ./volumes/keycloak/keycloak_data:/opt/keycloak/data
       - ./keycloak/w2m-disputes-realm.json:/opt/keycloak/data/import/w2m-disputes-realm.json
 
 volumes:

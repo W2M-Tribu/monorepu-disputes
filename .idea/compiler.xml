@@ -19,10 +19,20 @@
         <outputRelativeToContentRoot value="true" />
         <module name="snowflake-api" />
       </profile>
+      <profile name="Annotation profile for libreria-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-configuration-processor/3.5.7/spring-boot-configuration-processor-3.5.7.jar" />
+        </processorPath>
+        <module name="libreria" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="libreria" options="-parameters" />
       <module name="snowflake-api" options="-parameters" />
       <module name="w2m-disputes-back" options="-parameters" />
     </option>
