@@ -1,5 +1,8 @@
 package es.w2m.finance.disputes.w2mdisputes.controller;
 
+import es.w2m.finance.disputes.w2mdisputes.client.IaClient;
+import es.w2m.finance.disputes.w2mdisputes.client.SapClient;
+import es.w2m.finance.disputes.w2mdisputes.client.SnowflakeApiClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +24,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class DisputeController {
 
-    private final RestTemplate oauthRestTemplate;// Llamadas con oAuth2
-    private final RestTemplate plainRestTemplate;//Llamadas sin oAuth2
+    private final SnowflakeApiClient snowflakeApiClient;
+    private final SapClient sapClient;
+    private final IaClient iaClient;
 
     /**
      * Endpoint principal que devuelve información agregada de una disputa.
@@ -44,12 +48,9 @@ public class DisputeController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getDispute(@PathVariable String id) {
         try{
-            // Llamada a snowflake-api
-            Map<?, ?> dispute = oauthRestTemplate.getForObject("http://localhost:8081/test-snowflake", Map.class);
-            // Llamada al mock de SAP para obtener el estado de la disputa
-            Map<?, ?> sapStatus = plainRestTemplate.getForObject("http://localhost:8082/api/v1/status", Map.class);
-            // Llamada al mock de IA para obtener la categoría de la disputa
-            Map<?, ?> aiCategory = plainRestTemplate.getForObject("http://localhost:8082/api/v1/category", Map.class);
+            Map<String, Object> dispute   = snowflakeApiClient.getDispute();
+            Map<String, Object> sapStatus = sapClient.getStatus();
+            Map<String, Object> aiCategory= iaClient.getCategory();
 
             // Composición final de la respuesta con los datos agregados
             return ResponseEntity.ok(Map.of(
