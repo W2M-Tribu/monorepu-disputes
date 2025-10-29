@@ -2,7 +2,6 @@ package es.w2m.finance.disputes.w2mdisputes.client;
 
 import es.w2m.finance.disputes.w2mdisputes.config.OAuth2FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Map;
