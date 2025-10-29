@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/w2m-disputes-back/pom.xml" />
         <option value="$PROJECT_DIR$/edge-service/pom.xml" />
         <option value="$PROJECT_DIR$/snowflake-api/pom.xml" />
+        <option value="$PROJECT_DIR$/libreria-service/pom.xml" />
       </list>
     </option>
   </component>
