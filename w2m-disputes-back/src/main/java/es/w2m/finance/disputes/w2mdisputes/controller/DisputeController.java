@@ -1,14 +1,13 @@
 package es.w2m.finance.disputes.w2mdisputes.controller;
 
+import es.w2m.finance.disputes.libsnowflake.client.SnowflakeApiClient;
 import es.w2m.finance.disputes.w2mdisputes.client.IaClient;
 import es.w2m.finance.disputes.w2mdisputes.client.SapClient;
-import es.w2m.finance.disputes.w2mdisputes.client.SnowflakeApiClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
@@ -52,7 +51,6 @@ public class DisputeController {
             Map<String, Object> sapStatus = sapClient.getStatus();
             Map<String, Object> aiCategory= iaClient.getCategory();
 
-            // Composición final de la respuesta con los datos agregados
             return ResponseEntity.ok(Map.of(
                     "dispute", dispute,
                     "sap_status", sapStatus.get("status"),

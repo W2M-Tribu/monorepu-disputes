@@ -1,7 +1,7 @@
 package es.w2m.finance.disputes.w2mdisputes.service;
 
-import es.w2m.finance.disputes.w2mdisputes.model.DisputeRecord;
-import es.w2m.finance.disputes.w2mdisputes.repository.DisputeRecordRepository;
+import es.w2m.finance.disputes.w2mdisputes.model.Dispute;
+import es.w2m.finance.disputes.w2mdisputes.repository.DisputeRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.poi.ss.usermodel.*;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DisputeImportService {
 
-    private final DisputeRecordRepository repository;
+    private final DisputeRepository repository;
 
     public void importFromExcel(MultipartFile file) {
         try (InputStream is = file.getInputStream()) {
@@ -37,7 +37,7 @@ public class DisputeImportService {
                     continue;
                 }
 
-                DisputeRecord record = DisputeRecord.builder()
+                Dispute record = Dispute.builder()
                         .manager(getString(row, 0))
                         .openedDate(openedDate)
                         .jira(getString(row, 2))
@@ -97,7 +97,7 @@ public class DisputeImportService {
         }
     }
 
-    public List<DisputeRecord> getAllDisputes() {
+    public List<Dispute> getAllDisputes() {
         return repository.findAll();
     }
 }

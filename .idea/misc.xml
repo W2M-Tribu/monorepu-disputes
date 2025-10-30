@@ -9,7 +9,13 @@
         <option value="$PROJECT_DIR$/snowflake-api/pom.xml" />
         <option value="$PROJECT_DIR$/libreria-service/pom.xml" />
         <option value="$PROJECT_DIR$/snowflake-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/lib-snowflake/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/snowflake-lib/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">

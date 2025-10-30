@@ -17,21 +17,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="snowflake-api" />
-        <module name="snowflake-lib" />
-      </profile>
-      <profile name="Annotation profile for libreria-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-configuration-processor/3.5.7/spring-boot-configuration-processor-3.5.7.jar" />
-        </processorPath>
-        <module name="libreria" />
+        <module name="lib-snowflake" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="libreria" target="17" />
+      <module name="snowflake-lib" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lib-snowflake" options="-parameters" />
       <module name="libreria" options="-parameters" />
       <module name="snowflake-api" options="-parameters" />
       <module name="snowflake-lib" options="-parameters" />
