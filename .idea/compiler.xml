@@ -17,6 +17,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="snowflake-api" />
+        <module name="snowflake-lib" />
       </profile>
       <profile name="Annotation profile for libreria-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -33,6 +34,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="libreria" options="-parameters" />
       <module name="snowflake-api" options="-parameters" />
+      <module name="snowflake-lib" options="-parameters" />
       <module name="w2m-disputes-back" options="-parameters" />
     </option>
   </component>

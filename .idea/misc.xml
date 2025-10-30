@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/edge-service/pom.xml" />
         <option value="$PROJECT_DIR$/snowflake-api/pom.xml" />
         <option value="$PROJECT_DIR$/libreria-service/pom.xml" />
+        <option value="$PROJECT_DIR$/snowflake-lib/pom.xml" />
       </list>
     </option>
   </component>

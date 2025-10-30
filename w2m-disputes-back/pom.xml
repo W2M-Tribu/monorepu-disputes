@@ -76,6 +76,12 @@
             <version>5.4.0</version>
         </dependency>
 
+        <!-- Lib snowflake api -->
+        <dependency>
+            <groupId>com.libreria</groupId>
+            <artifactId>libreria</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- W2M Infrastructure Dependencies (temporalmente desactivada para evitar error de resolución) -->
         <!--
         <dependency>

@@ -1,5 +1,0 @@
-server:
-    port: 8085
-
-apiclient:
-    base-url: http://localhost:8081
