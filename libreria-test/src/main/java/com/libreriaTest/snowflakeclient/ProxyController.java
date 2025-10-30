@@ -18,7 +18,7 @@ public class ProxyController {
         if (body == null || body.getUrl() == null || body.getUrl().isBlank()) {
             return ResponseEntity.badRequest().body("Falta 'url' en el body");
         }
-        ResponseEntity<String> resp = apiClient.get(body.getUrl());
+        ResponseEntity<String> resp = apiClient.get('/test-snowflake');
         return ResponseEntity.status(resp.getStatusCode()).body(resp.getBody());
     }
 }
