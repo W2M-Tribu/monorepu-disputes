@@ -35,13 +35,6 @@ w2m:
       services:
         snowflake-client:
           service-url: http://localhost:8081
-          connect-timeout-ms: 1500
-          read-timeout-ms: 3000
-          max-retries: 0
-          oauth2:
-            client-id: w2m-disputes-service
-            client-registration-id: keycloak
-            principal: snowflake-client
 
 server:
   port: 8090

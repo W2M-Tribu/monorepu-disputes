@@ -1,13 +1,11 @@
-package es.w2m.finance.disputes.w2mdisputes.config;
+package es.w2m.finance.disputes.libsnowflake.configuration;
 
 import feign.RequestInterceptor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.client.*;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-
 
 @Configuration(proxyBeanMethods = false)
 public class OAuth2FeignConfig {
