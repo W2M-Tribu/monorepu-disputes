@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="snowflake-api" />
+        <module name="lib-snowflake" />
       </profile>
       <profile name="Annotation profile for w2m-disputes-back" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -17,7 +18,6 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
         <module name="w2m-disputes-back" />
-        <module name="lib-snowflake" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
