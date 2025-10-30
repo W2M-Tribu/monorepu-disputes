@@ -4,5 +4,5 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Import;
 
 @AutoConfiguration
-@Import({es.w2m.finance.disputes.libsnowflake.configuration.SnowflakeClientConfiguration.class})
+@Import(SnowflakeFeignConfig.class)
 public class SnowflakeClientAutoConfiguration {}
