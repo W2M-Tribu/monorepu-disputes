@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.w2mdisputes.security;
+package es.w2m.finance.disputes.w2mdisputes.infrastructure.security;
 
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;

@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.w2mdisputes.config;
+package es.w2m.finance.disputes.w2mdisputes.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,32 +1,36 @@
-package es.w2m.finance.disputes.w2mdisputes.service;
+package es.w2m.finance.disputes.w2mdisputes.infrastructure.adapter.output.excel;
 
-import es.w2m.finance.disputes.w2mdisputes.model.DisputeRecord;
-import es.w2m.finance.disputes.w2mdisputes.repository.DisputeRecordRepository;
-import lombok.RequiredArgsConstructor;
+import es.w2m.finance.disputes.w2mdisputes.application.port.output.ExcelParserPort;
+import es.w2m.finance.disputes.w2mdisputes.domain.model.Dispute;
+import lombok.SneakyThrows;
 import org.apache.poi.ss.usermodel.*;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-public class DisputeImportService {
+@Component
+public class ApachePoiExcelParserAdapter implements ExcelParserPort {
 
-    private final DisputeRecordRepository repository;
+    @Override
+    @SneakyThrows
+    public List<Dispute> parse(MultipartFile file) {
+        List<Dispute> list = new ArrayList<>();
 
-    public void importFromExcel(MultipartFile file) {
-        try (InputStream is = file.getInputStream()) {
-            Workbook workbook = WorkbookFactory.create(is);
+        try (InputStream inputStream = file.getInputStream()) {
+            Workbook workbook = WorkbookFactory.create(inputStream);
             Sheet sheet = workbook.getSheet("Disputas");
+            if (sheet == null) {
+                return list;
+            }
 
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i);
                 if (row == null) continue;
 
-                // Requisitos mínimos para considerar válida una fila
                 LocalDate openedDate = getDate(row, 1);
                 String clientName = getString(row, 4);
                 String invoiceNumber = getString(row, 7);
@@ -37,7 +41,8 @@ public class DisputeImportService {
                     continue;
                 }
 
-                DisputeRecord record = DisputeRecord.builder()
+                Dispute dispute = Dispute.builder()
+                        .id(null)
                         .manager(getString(row, 0))
                         .openedDate(openedDate)
                         .jira(getString(row, 2))
@@ -64,40 +69,34 @@ public class DisputeImportService {
                         .handledBy(getString(row, 23))
                         .build();
 
-                repository.save(record);
+                list.add(dispute);
             }
-
-        } catch (Exception e) {
-            throw new RuntimeException("Error processing Excel file: " + e.getMessage(), e);
         }
+        return list;
     }
 
-    private String getString(Row row, int index) {
-        Cell cell = row.getCell(index);
+
+    private static String getString(Row row, int idx) {
+        Cell cell = row.getCell(idx);
         return (cell != null) ? cell.toString().trim() : null;
     }
 
-    private LocalDate getDate(Row row, int index) {
+    private static Double getDouble(Row row, int idx) {
         try {
-            Cell cell = row.getCell(index);
+            Cell cell = row.getCell(idx);
+            return (cell != null) ? cell.getNumericCellValue() : null;
+        } catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private static LocalDate getDate(Row row, int idx) {
+        try {
+            Cell cell = row.getCell(idx);
             if (cell == null || cell.getCellType() != CellType.NUMERIC) return null;
             return cell.getLocalDateTimeCellValue().toLocalDate();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
             return null;
         }
-    }
-
-    private Double getDouble(Row row, int index) {
-        try {
-            Cell cell = row.getCell(index);
-            if (cell == null) return null;
-            return cell.getNumericCellValue();
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public List<DisputeRecord> getAllDisputes() {
-        return repository.findAll();
     }
 }

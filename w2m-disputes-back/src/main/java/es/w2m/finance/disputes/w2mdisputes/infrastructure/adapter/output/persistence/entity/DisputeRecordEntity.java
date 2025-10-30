@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.w2mdisputes.model;
+package es.w2m.finance.disputes.w2mdisputes.infrastructure.adapter.output.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DisputeRecord {
+public class DisputeRecordEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

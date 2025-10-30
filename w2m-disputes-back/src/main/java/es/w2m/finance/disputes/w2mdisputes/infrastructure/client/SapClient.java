@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.w2mdisputes.client;
+package es.w2m.finance.disputes.w2mdisputes.infrastructure.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
