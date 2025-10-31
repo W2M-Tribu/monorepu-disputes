@@ -1,2 +1,1 @@
-es.w2m.finance.disputes.libsnowflake.config.OAuth2ClientConfig
-es.w2m.finance.disputes.libsnowflake.config.OAuth2FeignConfig
+es.w2m.finance.disputes.libsnowflake.config.SnowFlakeApiAutoConfiguration
