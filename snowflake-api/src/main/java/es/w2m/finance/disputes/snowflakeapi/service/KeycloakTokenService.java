@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.w2mdisputes.infrastructure.security;
+package es.w2m.finance.disputes.snowflakeapi.service;
 
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;

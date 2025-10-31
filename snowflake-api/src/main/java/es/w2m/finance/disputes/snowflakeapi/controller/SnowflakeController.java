@@ -1,7 +1,7 @@
 package es.w2m.finance.disputes.snowflakeapi.controller;
 
 import es.w2m.finance.disputes.snowflakeapi.client.SnowflakeClient;
-import es.w2m.finance.disputes.snowflakeapi.security.KeycloakTokenService;
+import es.w2m.finance.disputes.snowflakeapi.service.KeycloakTokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,20 +22,20 @@ public class SnowflakeController {
     @PreAuthorize("hasRole('disputes')")
     @GetMapping("/test-snowflake")
     public ResponseEntity<Map<String, Object>> testQuery() {
-        String query = "{ \"statement\": \"SELECT * FROM users\" }";
+        final String query = "{ \"statement\": \"SELECT * FROM users\" }";
 
         // 1. Llamada a WireMock (mock de Snowflake)
-        ResponseEntity<Map<String, Object>> result = snowflakeClient.sendQuery(
+        final ResponseEntity<Map<String, Object>> result = this.snowflakeClient.sendQuery(
                 query,
                 "Bearer abc123", // token esperado por el mock
                 "application/json"
         );
 
         // 2. Obtener el token real de Keycloak
-        String token = keycloakTokenService.getToken();
+        final String token = this.keycloakTokenService.getToken();
 
         // 3. Construir la respuesta combinada
-        Map<String, Object> combined = new HashMap<>();
+        final Map<String, Object> combined = new HashMap<>();
         combined.put("wiremockResponse", result.getBody());
         combined.put("keycloakToken", token);
 

@@ -1,7 +1,15 @@
 package es.w2m.finance.disputes.w2mdisputes.infrastructure.adapter.output.persistence.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -11,11 +19,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-<<<<<<<< HEAD:w2m-disputes-back/src/main/java/es/w2m/finance/disputes/w2mdisputes/infrastructure/adapter/output/persistence/entity/DisputeRecordEntity.java
 public class DisputeRecordEntity {
-========
-public class Dispute {
->>>>>>>> develop:w2m-disputes-back/src/main/java/es/w2m/finance/disputes/w2mdisputes/infrastructure/adapter/output/persistence/entity/Dispute.java
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

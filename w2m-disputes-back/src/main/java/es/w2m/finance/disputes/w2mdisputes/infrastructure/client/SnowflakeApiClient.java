@@ -1,12 +1,6 @@
-<<<<<<<< HEAD:w2m-disputes-back/src/main/java/es/w2m/finance/disputes/w2mdisputes/infrastructure/client/SnowflakeApiClient.java
 package es.w2m.finance.disputes.w2mdisputes.infrastructure.client;
 
 import es.w2m.finance.disputes.w2mdisputes.infrastructure.config.OAuth2FeignConfig;
-========
-package es.w2m.finance.disputes.libsnowflake.client;
-
-import es.w2m.finance.disputes.libsnowflake.config.OAuth2FeignConfig;
->>>>>>>> develop:lib-snowflake/src/main/java/es/w2m/finance/disputes/libsnowflake/client/SnowflakeApiClient.java
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
