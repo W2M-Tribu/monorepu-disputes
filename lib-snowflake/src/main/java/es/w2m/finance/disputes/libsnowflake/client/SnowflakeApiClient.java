@@ -1,6 +1,6 @@
-package es.w2m.finance.disputes.w2mdisputes.infrastructure.client;
+package es.w2m.finance.disputes.libsnowflake.client;
 
-import es.w2m.finance.disputes.w2mdisputes.infrastructure.config.OAuth2FeignConfig;
+import es.w2m.finance.disputes.libsnowflake.config.OAuth2FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
