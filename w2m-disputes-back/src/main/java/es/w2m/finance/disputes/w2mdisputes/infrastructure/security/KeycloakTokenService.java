@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:w2m-disputes-back/src/main/java/es/w2m/finance/disputes/w2mdisputes/infrastructure/security/KeycloakTokenService.java
 package es.w2m.finance.disputes.w2mdisputes.infrastructure.security;
+========
+package es.w2m.finance.disputes.snowflakeapi.security;
+>>>>>>>> develop:snowflake-api/src/main/java/es/w2m/finance/disputes/snowflakeapi/security/KeycloakTokenService.java
 
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;

@@ -1,11 +1,10 @@
-package es.w2m.finance.disputes.w2mdisputes.infrastructure.config;
+package es.w2m.finance.disputes.libsnowflake.config;
 
 import feign.RequestInterceptor;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
+import org.springframework.security.oauth2.client.*;
 
 @AutoConfiguration
 @ConditionalOnBean(OAuth2AuthorizedClientManager.class)

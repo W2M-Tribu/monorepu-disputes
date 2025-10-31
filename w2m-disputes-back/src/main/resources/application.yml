@@ -29,5 +29,12 @@ spring:
       hibernate:
         format_sql: true
 
+w2m:
+  rest:
+    client:
+      services:
+        snowflake-client:
+          service-url: http://localhost:8081
+
 server:
   port: 8090

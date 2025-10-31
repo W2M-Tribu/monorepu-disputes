@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.w2mdisputes.infrastructure.config;
+package es.w2m.finance.disputes.libsnowflake.config;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -19,14 +19,14 @@ public class OAuth2ClientConfig {
     @Bean
     @ConditionalOnMissingBean
     public OAuth2AuthorizedClientManager authorizedClientManager(
-            ClientRegistrationRepository clientRegistrationRepository,
-            OAuth2AuthorizedClientService authorizedClientService) {
+            final ClientRegistrationRepository clientRegistrationRepository,
+            final OAuth2AuthorizedClientService authorizedClientService) {
 
-        var provider = OAuth2AuthorizedClientProviderBuilder.builder()
+        final var provider = OAuth2AuthorizedClientProviderBuilder.builder()
                 .clientCredentials()
                 .build();
 
-        var manager = new AuthorizedClientServiceOAuth2AuthorizedClientManager(
+        final var manager = new AuthorizedClientServiceOAuth2AuthorizedClientManager(
                 clientRegistrationRepository, authorizedClientService);
         manager.setAuthorizedClientProvider(provider);
         return manager;
