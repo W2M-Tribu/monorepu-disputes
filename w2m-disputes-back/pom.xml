@@ -21,6 +21,11 @@
         <!-- Corporate dependencies -->
         <dependency>
             <groupId>com.w2m.infrastructure</groupId>
+            <artifactId>starter-rest-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.w2m.infrastructure</groupId>
             <artifactId>starter-rest-client</artifactId>
         </dependency>
 
