@@ -8,6 +8,7 @@ import feign.codec.Decoder;
 import feign.codec.Encoder;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -19,46 +20,33 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 public class SnowFlakeApiFeignConfig {
 
     @Bean
-    public Decoder feignDecoder(final ObjectMapper mapper) {
+    @Qualifier("sfApiDecoder")
+    public Decoder sfApiDecoder(final ObjectMapper mapper) {
         return new JacksonDecoder(mapper);
     }
 
     @Bean
-    public Encoder feignEncoder(final ObjectMapper mapper) {
+    @Qualifier("sfApiEncoder")
+    public Encoder sfApiEncoder(final ObjectMapper mapper) {
         return new JacksonEncoder(mapper);
     }
 
     @Bean
-    @ConditionalOnMissingBean(feign.Client.class)
-    public feign.Client feignClient() {
+    @Qualifier("sfApiFeignClient")
+    @ConditionalOnMissingBean(name = "sfApiFeignClient")
+    public feign.Client sfApiFeignClient() {
         return new feign.okhttp.OkHttpClient();
     }
 
     @Bean
-    public feign.Logger.Level feignLoggerLevel() {
+    @Qualifier("sfApiLogLevel")
+    public feign.Logger.Level sfApiLogLevel() {
         return feign.Logger.Level.FULL;
     }
 
     @Bean
-    public SnowflakeApiClient snowflakeApiClient(
-            @Value("${w2m.rest.client.services.snowflake-client.service-url}") final String baseUrl,
-            final feign.Client client,
-            final Decoder decoder,
-            final Encoder encoder,
-            final feign.Logger.Level logLevel,
-            final java.util.List<feign.RequestInterceptor> interceptors
-    ) {
-        return Feign.builder()
-                .client(client)
-                .encoder(encoder)
-                .decoder(decoder)
-                .logLevel(logLevel)
-                .requestInterceptors(interceptors)
-                .target(SnowflakeApiClient.class, baseUrl);
-    }
-
-    @Bean
-    public RequestInterceptor oauth2FeignRequestInterceptor(final OAuth2AuthorizedClientManager manager) {
+    @Qualifier("sfApiAuthInterceptor")
+    public RequestInterceptor sfApiAuthInterceptor(final OAuth2AuthorizedClientManager manager) {
         return template -> {
             final var authReq = OAuth2AuthorizeRequest
                     .withClientRegistrationId("keycloak")
@@ -71,5 +59,23 @@ public class SnowFlakeApiFeignConfig {
             }
             template.header("Authorization", "Bearer " + client.getAccessToken().getTokenValue());
         };
+    }
+
+    @Bean
+    public SnowflakeApiClient snowflakeApiClient(
+            @Value("${w2m.rest.client.services.snowflake-client.service-url}") final String baseUrl,
+            @Qualifier("sfApiFeignClient") final feign.Client client,
+            @Qualifier("sfApiDecoder") final Decoder decoder,
+            @Qualifier("sfApiEncoder") final Encoder encoder,
+            @Qualifier("sfApiLogLevel") final feign.Logger.Level logLevel,
+            @Qualifier("sfApiAuthInterceptor") final RequestInterceptor authInterceptor
+    ) {
+        return Feign.builder()
+                .client(client)
+                .encoder(encoder)
+                .decoder(decoder)
+                .logLevel(logLevel)
+                .requestInterceptor(authInterceptor)
+                .target(SnowflakeApiClient.class, baseUrl);
     }
 }
