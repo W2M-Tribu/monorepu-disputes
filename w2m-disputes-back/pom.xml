@@ -24,11 +24,6 @@
             <artifactId>starter-rest-api</artifactId>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.w2m.infrastructure</groupId>-->
-        <!--            <artifactId>starter-security-session</artifactId>-->
-        <!--        </dependency>-->
-
         <!-- Spring Boot dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

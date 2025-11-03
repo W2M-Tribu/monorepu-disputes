@@ -12,18 +12,20 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 public class OAuth2FeignConfig {
 
     @Bean
-    public RequestInterceptor oauth2FeignRequestInterceptor(OAuth2AuthorizedClientManager manager) {
+    public RequestInterceptor oauth2FeignRequestInterceptor(final OAuth2AuthorizedClientManager manager) {
         return template -> {
-            var authReq = OAuth2AuthorizeRequest
+            final var authReq = OAuth2AuthorizeRequest
                     .withClientRegistrationId("keycloak")
                     .principal("w2m-disputes-service")
                     .build();
 
-            var client = manager.authorize(authReq);
+            final var client = manager.authorize(authReq);
             if (client == null || client.getAccessToken() == null) {
                 throw new IllegalStateException("Could not obtain access token (client_credentials).");
             }
             template.header("Authorization", "Bearer " + client.getAccessToken().getTokenValue());
         };
     }
+
+
 }

@@ -1,7 +1,7 @@
-package es.w2m.finance.disputes.libsnowflake.config;
+package es.w2m.finance.disputes.snowflakeapi.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import es.w2m.finance.disputes.libsnowflake.client.SnowflakeApiClient;
+import es.w2m.finance.disputes.snowflakeapi.client.SnowflakeClient;
 import feign.Feign;
 import feign.RequestInterceptor;
 import feign.codec.Decoder;
@@ -16,7 +16,7 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 
 @Configuration
-public class SnowFlakeApiFeignConfig {
+public class SnowflakeCoreFeignConfig {
 
     @Bean
     public Decoder feignDecoder(final ObjectMapper mapper) {
@@ -40,7 +40,7 @@ public class SnowFlakeApiFeignConfig {
     }
 
     @Bean
-    public SnowflakeApiClient snowflakeApiClient(
+    public SnowflakeClient snowflakeClient(
             @Value("${w2m.rest.client.services.snowflake-client.service-url}") final String baseUrl,
             final feign.Client client,
             final Decoder decoder,
@@ -54,7 +54,7 @@ public class SnowFlakeApiFeignConfig {
                 .decoder(decoder)
                 .logLevel(logLevel)
                 .requestInterceptors(interceptors)
-                .target(SnowflakeApiClient.class, baseUrl);
+                .target(SnowflakeClient.class, baseUrl);
     }
 
     @Bean
@@ -69,7 +69,8 @@ public class SnowFlakeApiFeignConfig {
             if (client == null || client.getAccessToken() == null) {
                 throw new IllegalStateException("Could not obtain access token (client_credentials).");
             }
-            template.header("Authorization", "Bearer " + client.getAccessToken().getTokenValue());
+            //template.header("Authorization", "Bearer " + client.getAccessToken().getTokenValue());
+            template.header("Authorization", "Bearer abc123");
         };
     }
 }

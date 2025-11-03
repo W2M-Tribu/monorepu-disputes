@@ -1,18 +1,11 @@
 package es.w2m.finance.disputes.libsnowflake.client;
 
-import es.w2m.finance.disputes.libsnowflake.config.SnowFlakeApiAutoConfiguration;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import feign.RequestLine;
 
 import java.util.Map;
 
-@FeignClient(
-        name = "snowflakeApiClient",
-        url = "${w2m.rest.client.services.snowflake-client.service-url:}",
-        configuration = SnowFlakeApiAutoConfiguration.class
-)
 public interface SnowflakeApiClient {
 
-    @GetMapping("/test-snowflake")
+    @RequestLine("GET /test-snowflake")
     Map<String, Object> getDispute();
 }

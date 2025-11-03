@@ -18,5 +18,12 @@ spring:
         jwt:
           issuer-uri: http://localhost:8181/realms/w2m-disputes
 
+w2m:
+  rest:
+    client:
+      services:
+        snowflake-client:
+          service-url: http://localhost:8082
+
 server:
   port: 8081

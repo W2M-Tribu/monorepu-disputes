@@ -28,22 +28,12 @@
     <dependencies>
 
         <!-- Corporate dependencies -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.w2m.infrastructure</groupId>-->
-        <!--            <artifactId>starter-security-session</artifactId>-->
-        <!--        </dependency>-->
-
         <dependency>
             <groupId>com.w2m.infrastructure</groupId>
-            <artifactId>starter-rest-api</artifactId>
+            <artifactId>starter-rest-client</artifactId>
         </dependency>
 
         <!-- Spring Boot dependencies -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
@@ -52,11 +42,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <!-- Third party dependencies-->
