@@ -1,12 +1,11 @@
-package es.w2m.finance.disputes.w2mdisputes;
+package es.w2m.finance.disputes.snowflakeapi;
 
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.test.context.ActiveProfiles;
 
 //@SpringBootTest
-class W2mDisputesApplicationTests {
-
+class SnowflakeApiApplicationTests {
+//
 //    @Test
 //    void contextLoads() {
 //    }

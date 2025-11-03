@@ -1,6 +1,7 @@
 spring:
   application:
-    name: edge-service
+    name: snowflake-api
+
   security:
     oauth2:
       client:
