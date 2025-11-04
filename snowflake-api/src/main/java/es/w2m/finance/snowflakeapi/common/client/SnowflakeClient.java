@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface SnowflakeClient {
 
-    @RequestLine("POST /api/v2/statements")
+    @RequestLine("POST /disputes/snowflake/api/v2/statements")
     @Headers("Content-Type: application/json")
     Map<String, Object> sendQuery(SnowflakeRequest body);
 }

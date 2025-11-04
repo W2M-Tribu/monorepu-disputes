@@ -6,6 +6,6 @@ import java.util.Map;
 
 public interface SapClient {
 
-    @RequestLine("GET /api/v1/status")
+    @RequestLine("GET /disputes/sap/api/v1/status")
     Map<String, Object> getStatus();
 }

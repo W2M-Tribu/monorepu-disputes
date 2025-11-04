@@ -6,6 +6,6 @@ import java.util.Map;
 
 public interface IaClient {
 
-    @RequestLine("GET /api/v1/category")
+    @RequestLine("GET /disputes/ia/api/v1/category")
     Map<String, Object> getCategory();
 }

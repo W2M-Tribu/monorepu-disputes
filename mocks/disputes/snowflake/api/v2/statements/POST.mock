@@ -1,4 +1,4 @@
-#import '../select-status.js';
+#import './select-status.js';
 Content-Type: application/json
 
 {
