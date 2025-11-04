@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.snowflakeapi;
+package es.w2m.finance.snowflakeapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

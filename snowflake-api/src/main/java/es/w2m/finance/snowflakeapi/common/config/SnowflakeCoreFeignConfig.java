@@ -1,7 +1,7 @@
-package es.w2m.finance.disputes.snowflakeapi.config;
+package es.w2m.finance.snowflakeapi.common.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import es.w2m.finance.disputes.snowflakeapi.client.SnowflakeClient;
+import es.w2m.finance.snowflakeapi.common.client.SnowflakeClient;
 import feign.Feign;
 import feign.RequestInterceptor;
 import feign.codec.Decoder;
@@ -46,7 +46,7 @@ public class SnowflakeCoreFeignConfig {
             final Decoder decoder,
             final Encoder encoder,
             final feign.Logger.Level logLevel,
-            final java.util.List<feign.RequestInterceptor> interceptors
+            final java.util.List<RequestInterceptor> interceptors
     ) {
         return Feign.builder()
                 .client(client)
