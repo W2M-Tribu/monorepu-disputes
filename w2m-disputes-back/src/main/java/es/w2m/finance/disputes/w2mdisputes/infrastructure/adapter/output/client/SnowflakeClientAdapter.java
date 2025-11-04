@@ -1,7 +1,7 @@
 package es.w2m.finance.disputes.w2mdisputes.infrastructure.adapter.output.client;
 
-import es.w2m.finance.disputes.libsnowflake.client.SnowflakeApiClient;
 import es.w2m.finance.disputes.w2mdisputes.application.port.output.SnowflakePort;
+import es.w2m.finance.libsnowflake.disputes.client.SnowflakeApiClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

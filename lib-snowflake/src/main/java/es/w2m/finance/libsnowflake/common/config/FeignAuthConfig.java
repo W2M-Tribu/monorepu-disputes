@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.libsnowflake.config;
+package es.w2m.finance.libsnowflake.common.config;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 
 @Configuration
-public class SnowFlakeApiClientConfig {
+public class FeignAuthConfig {
 
     @Bean
     @ConditionalOnMissingBean

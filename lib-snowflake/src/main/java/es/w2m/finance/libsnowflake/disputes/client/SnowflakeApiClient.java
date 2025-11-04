@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.libsnowflake.client;
+package es.w2m.finance.libsnowflake.disputes.client;
 
 import feign.RequestLine;
 

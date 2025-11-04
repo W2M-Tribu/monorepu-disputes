@@ -1,7 +1,7 @@
-package es.w2m.finance.disputes.libsnowflake.config;
+package es.w2m.finance.libsnowflake.common.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import es.w2m.finance.disputes.libsnowflake.client.SnowflakeApiClient;
+import es.w2m.finance.libsnowflake.disputes.client.SnowflakeApiClient;
 import feign.Feign;
 import feign.RequestInterceptor;
 import feign.codec.Decoder;
@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 
 @Configuration
-public class SnowFlakeApiFeignConfig {
+public class FeignBuilderConfig {
 
     @Bean
     @Qualifier("sfApiDecoder")
