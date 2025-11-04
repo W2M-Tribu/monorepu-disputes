@@ -7,8 +7,6 @@ services:
       - "8082:8080"
     volumes:
       - ./mocks:/mocks
-    environment:
-      - MOCK_HEADERS=Authorization,Content-Type
     command: >
       sh -c "npm i -g mockserver@latest &&
              mockserver -p 8080 -m /mocks"
