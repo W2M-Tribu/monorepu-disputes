@@ -1,6 +1,5 @@
-package es.w2m.finance.disputes.snowflakeapi.client;
+package es.w2m.finance.snowflakeapi.common.client;
 
-import es.w2m.finance.disputes.snowflakeapi.dto.SnowflakeStatementRequest;
 import feign.Headers;
 import feign.RequestLine;
 
@@ -10,5 +9,5 @@ public interface SnowflakeClient {
 
     @RequestLine("POST /api/v2/statements")
     @Headers("Content-Type: application/json")
-    Map<String, Object> sendQuery(SnowflakeStatementRequest body);
+    Map<String, Object> sendQuery(SnowflakeRequest body);
 }

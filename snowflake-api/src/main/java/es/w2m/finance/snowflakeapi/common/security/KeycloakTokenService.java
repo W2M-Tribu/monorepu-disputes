@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.snowflakeapi.service;
+package es.w2m.finance.snowflakeapi.common.security;
 
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
@@ -17,7 +17,7 @@ public class KeycloakTokenService {
     public String getToken() {
         final OAuth2AuthorizeRequest request = OAuth2AuthorizeRequest
                 .withClientRegistrationId("keycloak")
-                .principal("edge-service")  // Puede ser un nombre cualquiera
+                .principal("edge-service")
                 .build();
 
         final OAuth2AuthorizedClient client = this.clientManager.authorize(request);

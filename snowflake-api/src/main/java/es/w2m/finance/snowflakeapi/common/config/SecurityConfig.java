@@ -1,4 +1,4 @@
-package es.w2m.finance.disputes.snowflakeapi.config;
+package es.w2m.finance.snowflakeapi.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class SecurityConfig {
     private static final String CLIENT_ID_B = "edge-service";
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain(final HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
@@ -31,7 +31,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth -> oauth
-                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter()))
+                        .jwt(jwt -> jwt.jwtAuthenticationConverter(this.jwtAuthConverter()))
                 );
 
         return http.build();
@@ -39,14 +39,14 @@ public class SecurityConfig {
 
     @Bean
     JwtAuthenticationConverter jwtAuthConverter() {
-        var converter = new JwtAuthenticationConverter();
+        final var converter = new JwtAuthenticationConverter();
         converter.setJwtGrantedAuthoritiesConverter(jwt -> {
-            List<GrantedAuthority> out = new ArrayList<>();
+            final List<GrantedAuthority> out = new ArrayList<>();
 
-            Map<String, Object> ra = jwt.getClaimAsMap("resource_access");
+            final Map<String, Object> ra = jwt.getClaimAsMap("resource_access");
             if (ra != null && ra.containsKey(CLIENT_ID_B)) {
-                Map<String, Object> b = (Map<String, Object>) ra.get(CLIENT_ID_B);
-                Collection<String> roles = (Collection<String>) b.get("roles");
+                final Map<String, Object> b = (Map<String, Object>) ra.get(CLIENT_ID_B);
+                final Collection<String> roles = (Collection<String>) b.get("roles");
                 if (roles != null) {
                     roles.forEach(r -> out.add(new SimpleGrantedAuthority("ROLE_" + r)));
                 }
