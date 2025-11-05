@@ -7,92 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Demo",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/api/saludo",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"api",
-						"saludo"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Token not found",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/api/token-check",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"api",
-						"token-check"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Token correcto",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/api/token-check",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"api",
-						"token-check"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Snowflake - No válida",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/disputes/snowflake/api/v2/statements",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"disputes",
-						"snowflake",
-						"api",
-						"v2",
-						"statements"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Keycloak -  edge-service - Get token",
 			"request": {
 				"method": "POST",
@@ -173,35 +87,6 @@
 						"protocol",
 						"openid-connect",
 						"token"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "snowflake - endpoint",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSU0RIQjRTMHRJMnRjU092MkFwRmpMb0pzN0dhdUlBWm9HQnROU0ZyTTlzIn0.eyJleHAiOjE3NTMzNDc2NjgsImlhdCI6MTc1MzM0NzM2OCwianRpIjoiZDM3ZTFjMjktMzY4NC00NmVjLWI3NDgtMTlhNGM1OGFmNmQ2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL3JlYWxtcy93Mm0tZGlzcHV0ZXMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZGJkOTU4YWYtNWNhYy00YmFlLWE1NTktY2VmYTVkNmQ4N2JmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWRnZS1zZXJ2aWNlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdzJtLWRpc3B1dGVzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lZGdlLXNlcnZpY2UiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjIwLjAuMSIsImNsaWVudF9pZCI6ImVkZ2Utc2VydmljZSJ9.RruTtYaq-eF2VO2wWPwSEn7irObarXr4VsPcrNuWnmgNCvDT90v-J-vY9NrrexfpZtta4hStWnA7M7zLzCe8hKGyMOGZkXW9yX4NOa4iUGNv5jDz-MWQwTcWVlrRb0vo7y99_UHG3u8C8LhYXmbNeuLpX8FB94D3lRcl81ZdclrkiZIxx25XKsAK6XwH1kGn0jP4iCQ6zgZarRmLO3Fn7nJmkweYiIg0-yExIAQODNHlVslAayHWY3vKYFpKop7GTJOt6ly_QnKXtVIGahi5zeOQWBfi2HSzAklkL0SJinN-ioOsXSrHNSgh2fgJqQyTlJing1dBto2qdk3a4RAD0Q",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/test-snowflake",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"test-snowflake"
 					]
 				}
 			},
