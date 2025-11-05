@@ -38,6 +38,7 @@ w2m:
 
 mock-server:
   base-url: http://localhost:8082
+  #https://mockserver.internal.w2m.com
 
 server:
   port: 8090
