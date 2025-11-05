@@ -23,8 +23,7 @@ w2m:
     client:
       services:
         snowflake-client:
-          service-url: http://localhost:8080
-          #https://mockserver.internal.w2m.com
+          service-url: https://mockserver.internal.w2m.com
 
 server:
   port: 8081

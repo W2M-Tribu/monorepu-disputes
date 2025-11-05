@@ -48,13 +48,26 @@ public class IaFeignCoreConfig {
     }
 
     @Bean
+    @Qualifier("iaStripAuth")
+    public RequestInterceptor iaStripAuth() {
+        return template -> {
+            try {
+                template.removeHeader("Authorization");
+            } catch (final NoSuchMethodError e) {
+                template.header("Authorization");
+            }
+        };
+    }
+
+    @Bean
     public IaClient iaClient(
             @Value("${mock-server.base-url}") final String baseUrl,
             @Qualifier("iaFeignClient") final Client client,
             @Qualifier("iaDecoder") final Decoder decoder,
             @Qualifier("iaEncoder") final Encoder encoder,
             @Qualifier("iaFeignLogLevel") final Logger.Level logLevel,
-            final List<RequestInterceptor> interceptors
+            final List<RequestInterceptor> interceptors,
+            @Qualifier("iaStripAuth") final RequestInterceptor stripAuth
     ) {
         return Feign.builder()
                 .client(client)
@@ -62,6 +75,7 @@ public class IaFeignCoreConfig {
                 .decoder(decoder)
                 .logLevel(logLevel)
                 .requestInterceptors(interceptors)
+                .requestInterceptor(stripAuth)
                 .target(IaClient.class, baseUrl);
     }
 }

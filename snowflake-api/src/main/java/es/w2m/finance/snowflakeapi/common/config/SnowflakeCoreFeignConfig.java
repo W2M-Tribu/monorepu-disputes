@@ -60,17 +60,22 @@ public class SnowflakeCoreFeignConfig {
     @Bean
     public RequestInterceptor oauth2FeignRequestInterceptor(final OAuth2AuthorizedClientManager manager) {
         return template -> {
-            final var authReq = OAuth2AuthorizeRequest
-                    .withClientRegistrationId("keycloak")
+            // URL base del target (requiere feign >= 12.x)
+            final String targetUrl = template.feignTarget() != null ? template.feignTarget().url() : "";
+
+            // No añadir Authorization para el mock
+            if (targetUrl.contains("mockserver.internal.w2m.com")) {
+                return; // skip
+            }
+
+            final var authReq = OAuth2AuthorizeRequest.withClientRegistrationId("keycloak")
                     .principal("edge-service")
                     .build();
-
             final var client = manager.authorize(authReq);
             if (client == null || client.getAccessToken() == null) {
                 throw new IllegalStateException("Could not obtain access token (client_credentials).");
             }
-            //template.header("Authorization", "Bearer " + client.getAccessToken().getTokenValue());
-            template.header("Authorization", "Bearer abc123");
+            template.header("Authorization", "Bearer " + client.getAccessToken().getTokenValue());
         };
     }
 }

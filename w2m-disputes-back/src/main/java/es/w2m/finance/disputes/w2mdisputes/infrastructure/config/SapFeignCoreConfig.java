@@ -48,13 +48,26 @@ public class SapFeignCoreConfig {
     }
 
     @Bean
+    @Qualifier("sapStripAuth")
+    public RequestInterceptor sapStripAuth() {
+        return template -> {
+            try {
+                template.removeHeader("Authorization");
+            } catch (final NoSuchMethodError e) {
+                template.header("Authorization");
+            }
+        };
+    }
+
+    @Bean
     public SapClient sapClient(
             @Value("${mock-server.base-url}") final String baseUrl,
             @Qualifier("sapFeignClient") final Client client,
             @Qualifier("sapDecoder") final Decoder decoder,
             @Qualifier("sapEncoder") final Encoder encoder,
             @Qualifier("sapFeignLogLevel") final Logger.Level logLevel,
-            final List<RequestInterceptor> interceptors
+            final List<RequestInterceptor> interceptors,
+            @Qualifier("sapStripAuth") final RequestInterceptor stripAuth
     ) {
         return Feign.builder()
                 .client(client)
@@ -62,6 +75,7 @@ public class SapFeignCoreConfig {
                 .decoder(decoder)
                 .logLevel(logLevel)
                 .requestInterceptors(interceptors)
+                .requestInterceptor(stripAuth)
                 .target(SapClient.class, baseUrl);
     }
 }

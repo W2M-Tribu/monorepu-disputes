@@ -1,17 +1,5 @@
 services:
 
-  mockserver:
-    image: node:20-alpine
-    container_name: mockserver
-    ports:
-      - "8082:8080"
-    volumes:
-      - ./mocks:/mocks
-    command: >
-      sh -c "npm i -g mockserver@latest &&
-             mockserver -p 8080 -m /mocks"
-    restart: unless-stopped
-
   postgres:
     image: postgres:15
     container_name: w2m-postgres

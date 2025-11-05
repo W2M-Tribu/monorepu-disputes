@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/disputes/sap/api/v1/status",
+                  "raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -35,7 +35,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/disputes/ia/api/v1/category",
+                  "raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -77,7 +77,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/disputes/snowflake/api/v2/statements",
+                  "raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
 					"protocol": "http",
 					"host": [
 						"localhost"

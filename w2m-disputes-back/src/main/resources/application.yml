@@ -37,8 +37,7 @@ w2m:
           service-url: http://localhost:8081
 
 mock-server:
-  base-url: http://localhost:8082
-  #https://mockserver.internal.w2m.com
+  base-url: https://mockserver.internal.w2m.com
 
 server:
   port: 8090
