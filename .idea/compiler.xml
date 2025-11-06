@@ -7,14 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="w2m-disputes-back" />
-        <module name="snowflake-api" />
-        <module name="lib-snowflake" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lib-snowflake" target="21" />
       <module name="libreria" target="17" />
+      <module name="snowflake-api" target="21" />
       <module name="snowflake-lib" target="21" />
+      <module name="w2m-disputes-back" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
