@@ -1,23 +1,244 @@
 {
 	"info": {
-		"_postman_id": "faf5ad09-e090-441e-b5fe-913635119674",
+		"_postman_id": "ea2490c2-32cf-41d8-bb58-1864302a4655",
 		"name": "W2M Disputes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "33844236"
+		"_exporter_id": "39902897"
 	},
 	"item": [
+		{
+			"name": "Demo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/saludo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"saludo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token not found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/token-check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"token-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token correcto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/token-check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"token-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Snowflake - No válida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/disputes/snowflake/api/v2/statements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"disputes",
+						"snowflake",
+						"api",
+						"v2",
+						"statements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keycloak -  edge-service - Get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "edge-service",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "fG7ulwLuFZ8wO5MueHbZq36m0KTpbG8T",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8181/realms/w2m-disputes/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"realms",
+						"w2m-disputes",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keycloak -  w2m-disputes-service - Get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "w2m-disputes-service",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "mofQnE8DvD8AbUWOcZKJeoriolovZcrm",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8181/realms/w2m-disputes/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"realms",
+						"w2m-disputes",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "snowflake - endpoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSU0RIQjRTMHRJMnRjU092MkFwRmpMb0pzN0dhdUlBWm9HQnROU0ZyTTlzIn0.eyJleHAiOjE3NTMzNDc2NjgsImlhdCI6MTc1MzM0NzM2OCwianRpIjoiZDM3ZTFjMjktMzY4NC00NmVjLWI3NDgtMTlhNGM1OGFmNmQ2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL3JlYWxtcy93Mm0tZGlzcHV0ZXMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZGJkOTU4YWYtNWNhYy00YmFlLWE1NTktY2VmYTVkNmQ4N2JmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWRnZS1zZXJ2aWNlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdzJtLWRpc3B1dGVzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lZGdlLXNlcnZpY2UiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjIwLjAuMSIsImNsaWVudF9pZCI6ImVkZ2Utc2VydmljZSJ9.RruTtYaq-eF2VO2wWPwSEn7irObarXr4VsPcrNuWnmgNCvDT90v-J-vY9NrrexfpZtta4hStWnA7M7zLzCe8hKGyMOGZkXW9yX4NOa4iUGNv5jDz-MWQwTcWVlrRb0vo7y99_UHG3u8C8LhYXmbNeuLpX8FB94D3lRcl81ZdclrkiZIxx25XKsAK6XwH1kGn0jP4iCQ6zgZarRmLO3Fn7nJmkweYiIg0-yExIAQODNHlVslAayHWY3vKYFpKop7GTJOt6ly_QnKXtVIGahi5zeOQWBfi2HSzAklkL0SJinN-ioOsXSrHNSgh2fgJqQyTlJing1dBto2qdk3a4RAD0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/test-snowflake",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test-snowflake"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "w2m-disputes-service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/dispute/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"dispute",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "SAP",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-                  "raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
+					"raw": "http://localhost:8082/disputes/sap/api/v1/status",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"disputes",
 						"sap",
@@ -35,12 +256,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-                  "raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
+					"raw": "http://localhost:8082/disputes/ia/api/v1/category",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"disputes",
 						"ia",
@@ -77,12 +298,12 @@
 					}
 				},
 				"url": {
-                  "raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
+					"raw": "http://localhost:8082/disputes/snowflake/api/v2/statements",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8082",
 					"path": [
 						"disputes",
 						"snowflake",
