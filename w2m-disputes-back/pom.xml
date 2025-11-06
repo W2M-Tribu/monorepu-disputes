@@ -64,6 +64,11 @@
             <version>${apache.poi.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
         <!-- Library Snowflake api -->
         <dependency>
             <groupId>es.w2m.finance.disputes</groupId>

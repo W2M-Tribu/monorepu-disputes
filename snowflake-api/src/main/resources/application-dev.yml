@@ -1,0 +1,3 @@
+logging:
+  level:
+    com.w2m: debug
