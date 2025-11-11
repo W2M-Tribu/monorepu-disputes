@@ -1,97 +1,11 @@
 {
 	"info": {
-		"_postman_id": "ea2490c2-32cf-41d8-bb58-1864302a4655",
+		"_postman_id": "dbbd8159-6253-4826-8a9d-63da6b784bed",
 		"name": "W2M Disputes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39902897"
+		"_exporter_id": "33844236"
 	},
 	"item": [
-		{
-			"name": "Demo",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/api/saludo",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"api",
-						"saludo"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Token not found",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/api/token-check",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"api",
-						"token-check"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Token correcto",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/api/token-check",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"api",
-						"token-check"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Snowflake - No válida",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/disputes/snowflake/api/v2/statements",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"disputes",
-						"snowflake",
-						"api",
-						"v2",
-						"statements"
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "Keycloak -  edge-service - Get token",
 			"request": {
@@ -155,7 +69,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "mofQnE8DvD8AbUWOcZKJeoriolovZcrm",
+							"value": "LbBHRR5M6e5XiuTlYBEONGE8yqMurWCq",
 							"type": "text"
 						}
 					]
@@ -233,12 +147,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8082/disputes/sap/api/v1/status",
-					"protocol": "http",
+					"raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"mockserver",
+						"internal",
+						"w2m",
+						"com"
 					],
-					"port": "8082",
 					"path": [
 						"disputes",
 						"sap",
@@ -256,12 +172,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8082/disputes/ia/api/v1/category",
-					"protocol": "http",
+					"raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"mockserver",
+						"internal",
+						"w2m",
+						"com"
 					],
-					"port": "8082",
 					"path": [
 						"disputes",
 						"ia",
@@ -276,18 +194,13 @@
 		{
 			"name": "Snowflake - Consulta válida",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "abc123",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\"statement\": \"SELECT * FROM usuarios\"}",
@@ -298,12 +211,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/disputes/snowflake/api/v2/statements",
-					"protocol": "http",
+					"raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"mockserver",
+						"internal",
+						"w2m",
+						"com"
 					],
-					"port": "8082",
 					"path": [
 						"disputes",
 						"snowflake",
