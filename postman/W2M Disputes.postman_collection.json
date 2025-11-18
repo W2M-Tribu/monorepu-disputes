@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "dbbd8159-6253-4826-8a9d-63da6b784bed",
+		"_postman_id": "89acfe34-15f1-44a0-8d6b-6e408a5fe84f",
 		"name": "W2M Disputes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "33844236"
+		"_exporter_id": "39902897"
 	},
 	"item": [
 		{
@@ -225,6 +225,103 @@
 						"api",
 						"v2",
 						"statements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Disputes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "team-finance",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "6FONUFUFLbhFiBUkUC7X2mYK7mWbX0Ab",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pre-auth.w2m.com/auth/realms/integration/protocol/openid-connect/token",
+					"protocol": "https",
+					"host": [
+						"pre-auth",
+						"w2m",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"integration",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Snowflake",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZmJlZTkwNzQtZTVmZi00NzU0LWI2MjYtZDJhMDdiYTJhNzQ4OkdCcDhRfkJ3U0tfUGM0R2tZN1Q1blBPbjJPaWFIREliVnMxLVJiaUs="
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "https://graph.microsoft.com/.default",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1",
+						"oauth2",
+						"v2.0",
+						"token"
 					]
 				}
 			},
