@@ -303,6 +303,47 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "TST-CREATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/dgp8/Desktop/incorrecto.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/dispute-creation/create",
+					"protocol": "https",
+					"host": [
+						"tst-api",
+						"internal",
+						"w2m",
+						"com"
+					],
+					"path": [
+						"dispute",
+						"api",
+						"v1",
+						"dispute-creation",
+						"create"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
