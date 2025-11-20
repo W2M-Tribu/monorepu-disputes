@@ -7,343 +7,479 @@
 	},
 	"item": [
 		{
-			"name": "snowflake - endpoint",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+			"name": "LOCAL",
+			"item": [
+				{
+					"name": "SnowflakeApi",
+					"item": [
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSU0RIQjRTMHRJMnRjU092MkFwRmpMb0pzN0dhdUlBWm9HQnROU0ZyTTlzIn0.eyJleHAiOjE3NTMzNDc2NjgsImlhdCI6MTc1MzM0NzM2OCwianRpIjoiZDM3ZTFjMjktMzY4NC00NmVjLWI3NDgtMTlhNGM1OGFmNmQ2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL3JlYWxtcy93Mm0tZGlzcHV0ZXMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZGJkOTU4YWYtNWNhYy00YmFlLWE1NTktY2VmYTVkNmQ4N2JmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWRnZS1zZXJ2aWNlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdzJtLWRpc3B1dGVzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lZGdlLXNlcnZpY2UiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjIwLjAuMSIsImNsaWVudF9pZCI6ImVkZ2Utc2VydmljZSJ9.RruTtYaq-eF2VO2wWPwSEn7irObarXr4VsPcrNuWnmgNCvDT90v-J-vY9NrrexfpZtta4hStWnA7M7zLzCe8hKGyMOGZkXW9yX4NOa4iUGNv5jDz-MWQwTcWVlrRb0vo7y99_UHG3u8C8LhYXmbNeuLpX8FB94D3lRcl81ZdclrkiZIxx25XKsAK6XwH1kGn0jP4iCQ6zgZarRmLO3Fn7nJmkweYiIg0-yExIAQODNHlVslAayHWY3vKYFpKop7GTJOt6ly_QnKXtVIGahi5zeOQWBfi2HSzAklkL0SJinN-ioOsXSrHNSgh2fgJqQyTlJing1dBto2qdk3a4RAD0Q",
-							"type": "string"
+							"name": "snowflake - endpoint",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSU0RIQjRTMHRJMnRjU092MkFwRmpMb0pzN0dhdUlBWm9HQnROU0ZyTTlzIn0.eyJleHAiOjE3NTMzNDc2NjgsImlhdCI6MTc1MzM0NzM2OCwianRpIjoiZDM3ZTFjMjktMzY4NC00NmVjLWI3NDgtMTlhNGM1OGFmNmQ2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL3JlYWxtcy93Mm0tZGlzcHV0ZXMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZGJkOTU4YWYtNWNhYy00YmFlLWE1NTktY2VmYTVkNmQ4N2JmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWRnZS1zZXJ2aWNlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdzJtLWRpc3B1dGVzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lZGdlLXNlcnZpY2UiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjIwLjAuMSIsImNsaWVudF9pZCI6ImVkZ2Utc2VydmljZSJ9.RruTtYaq-eF2VO2wWPwSEn7irObarXr4VsPcrNuWnmgNCvDT90v-J-vY9NrrexfpZtta4hStWnA7M7zLzCe8hKGyMOGZkXW9yX4NOa4iUGNv5jDz-MWQwTcWVlrRb0vo7y99_UHG3u8C8LhYXmbNeuLpX8FB94D3lRcl81ZdclrkiZIxx25XKsAK6XwH1kGn0jP4iCQ6zgZarRmLO3Fn7nJmkweYiIg0-yExIAQODNHlVslAayHWY3vKYFpKop7GTJOt6ly_QnKXtVIGahi5zeOQWBfi2HSzAklkL0SJinN-ioOsXSrHNSgh2fgJqQyTlJing1dBto2qdk3a4RAD0Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/test-snowflake",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"test-snowflake"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/test-snowflake",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"test-snowflake"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "w2m-disputes-service",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8090/dispute/123",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8090",
-					"path": [
-						"dispute",
-						"123"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "SAP",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
-					"protocol": "https",
-					"host": [
-						"mockserver",
-						"internal",
-						"w2m",
-						"com"
-					],
-					"path": [
-						"disputes",
-						"sap",
-						"api",
-						"v1",
-						"status"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "IA",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
-					"protocol": "https",
-					"host": [
-						"mockserver",
-						"internal",
-						"w2m",
-						"com"
-					],
-					"path": [
-						"disputes",
-						"ia",
-						"api",
-						"v1",
-						"category"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Snowflake - Consulta válida",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"statement\": \"SELECT * FROM usuarios\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
-					"protocol": "https",
-					"host": [
-						"mockserver",
-						"internal",
-						"w2m",
-						"com"
-					],
-					"path": [
-						"disputes",
-						"snowflake",
-						"api",
-						"v2",
-						"statements"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login Disputes",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
+				{
+					"name": "Disputes",
+					"item": [
 						{
-							"key": "username",
-							"value": "team-finance",
-							"type": "string"
+							"name": "w2m-disputes-service",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/v1/dispute/123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"dispute",
+										"123"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "password",
-							"value": "6FONUFUFLbhFiBUkUC7X2mYK7mWbX0Ab",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "grant_type",
-							"value": "client_credentials",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://pre-auth.w2m.com/auth/realms/integration/protocol/openid-connect/token",
-					"protocol": "https",
-					"host": [
-						"pre-auth",
-						"w2m",
-						"com"
-					],
-					"path": [
-						"auth",
-						"realms",
-						"integration",
-						"protocol",
-						"openid-connect",
-						"token"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login Snowflake",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/x-www-form-urlencoded"
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic ZmJlZTkwNzQtZTVmZi00NzU0LWI2MjYtZDJhMDdiYTJhNzQ4OkdCcDhRfkJ3U0tfUGM0R2tZN1Q1blBPbjJPaWFIREliVnMxLVJiaUs="
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "grant_type",
-							"value": "client_credentials",
-							"type": "text"
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
+											"contentType": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/dgp8/Desktop/correcto.xlsx"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/v1/dispute-creation/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"dispute-creation",
+										"create"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "scope",
-							"value": "https://graph.microsoft.com/.default",
-							"type": "text"
+							"name": "BP",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "sec-ch-ua-platform",
+										"value": "\"Windows\""
+									},
+									{
+										"key": "Referer",
+										"value": "https://disputes.tst.internal.w2m.com/"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "sec-ch-ua",
+										"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"bp\":\"67\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/v1/bp-manager/check",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"bp-manager",
+										"check"
+									]
+								}
+							},
+							"response": []
 						}
 					]
-				},
-				"url": {
-					"raw": "https://login.microsoftonline.com/a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1/oauth2/v2.0/token",
-					"protocol": "https",
-					"host": [
-						"login",
-						"microsoftonline",
-						"com"
-					],
-					"path": [
-						"a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1",
-						"oauth2",
-						"v2.0",
-						"token"
-					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "TST-BP",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "sec-ch-ua-platform",
-						"value": "\"Windows\""
-					},
-					{
-						"key": "Referer",
-						"value": "https://disputes.tst.internal.w2m.com/"
-					},
-					{
-						"key": "User-Agent",
-						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json, text/plain, */*"
-					},
-					{
-						"key": "sec-ch-ua",
-						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "sec-ch-ua-mobile",
-						"value": "?0"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"bp\":\"67\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/bp-manager/check",
-					"protocol": "https",
-					"host": [
-						"tst-api",
-						"internal",
-						"w2m",
-						"com"
-					],
-					"path": [
-						"dispute",
-						"api",
-						"v1",
-						"bp-manager",
-						"check"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "TST-CREATE",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "data",
-							"value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
-							"contentType": "application/json",
-							"type": "text"
+			"name": "TST",
+			"item": [
+				{
+					"name": "TST-BP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "Referer",
+								"value": "https://disputes.tst.internal.w2m.com/"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"bp\":\"67\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "file",
-							"type": "file",
-							"src": "/C:/Users/dgp8/Desktop/incorrecto.xlsx"
+						"url": {
+							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/bp-manager/check",
+							"protocol": "https",
+							"host": [
+								"tst-api",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"dispute",
+								"api",
+								"v1",
+								"bp-manager",
+								"check"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/dispute-creation/create",
-					"protocol": "https",
-					"host": [
-						"tst-api",
-						"internal",
-						"w2m",
-						"com"
-					],
-					"path": [
-						"dispute",
-						"api",
-						"v1",
-						"dispute-creation",
-						"create"
-					]
+				{
+					"name": "TST-CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/dgp8/Desktop/incorrecto.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/dispute-creation/create",
+							"protocol": "https",
+							"host": [
+								"tst-api",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"dispute",
+								"api",
+								"v1",
+								"dispute-creation",
+								"create"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "MOCKSERVER",
+			"item": [
+				{
+					"name": "SAP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
+							"protocol": "https",
+							"host": [
+								"mockserver",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"disputes",
+								"sap",
+								"api",
+								"v1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
+							"protocol": "https",
+							"host": [
+								"mockserver",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"disputes",
+								"ia",
+								"api",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Snowflake - Consulta válida",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"statement\": \"SELECT * FROM usuarios\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
+							"protocol": "https",
+							"host": [
+								"mockserver",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"disputes",
+								"snowflake",
+								"api",
+								"v2",
+								"statements"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOGIN",
+			"item": [
+				{
+					"name": "Login Disputes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "team-finance",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "6FONUFUFLbhFiBUkUC7X2mYK7mWbX0Ab",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pre-auth.w2m.com/auth/realms/integration/protocol/openid-connect/token",
+							"protocol": "https",
+							"host": [
+								"pre-auth",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"auth",
+								"realms",
+								"integration",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Snowflake",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZmJlZTkwNzQtZTVmZi00NzU0LWI2MjYtZDJhMDdiYTJhNzQ4OkdCcDhRfkJ3U0tfUGM0R2tZN1Q1blBPbjJPaWFIREliVnMxLVJiaUs="
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "https://graph.microsoft.com/.default",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.microsoftonline.com/a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1/oauth2/v2.0/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"microsoftonline",
+								"com"
+							],
+							"path": [
+								"a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1",
+								"oauth2",
+								"v2.0",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
