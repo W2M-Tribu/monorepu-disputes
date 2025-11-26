@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "89acfe34-15f1-44a0-8d6b-6e408a5fe84f",
+		"_postman_id": "08bdb378-2fce-4c71-bc6f-2046141d262d",
 		"name": "W2M Disputes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "39902897"
@@ -52,12 +52,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8090/api/v1/dispute/123",
+									"raw": "http://localhost:8080/api/v1/dispute/123",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8090",
+									"port": "8080",
 									"path": [
 										"api",
 										"v1",
@@ -69,7 +69,48 @@
 							"response": []
 						},
 						{
-							"name": "CREATE",
+							"name": "CREATE CORRECT",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n  \"bp\": \"900017561\",\n  \"emails\": [\n    \"valid@example.com\",\n    \"fjcuenase@gmail.com\"\n  ]\n}",
+											"contentType": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/dgp8/Downloads/Michellee/correct.xlsx"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/dispute-creation/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"dispute-creation",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE INCORRECT EMPTY",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -88,17 +129,17 @@
 										{
 											"key": "file",
 											"type": "file",
-											"src": "/C:/Users/dgp8/Desktop/correcto.xlsx"
+											"src": "/C:/Users/FranciscoJavierCuena/Plexus Tech/Plexus W2M Gestión de disputas - Documentos/[continuous_evolution]/continuous_execution/continuous_integration/develop/postman-tests/alta/incorrect - empty.xlsx"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://localhost:8090/api/v1/dispute-creation/create",
+									"raw": "http://localhost:8080/api/v1/dispute-creation/create",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8090",
+									"port": "8080",
 									"path": [
 										"api",
 										"v1",
@@ -110,7 +151,70 @@
 							"response": []
 						},
 						{
-							"name": "BP",
+							"name": "BP KNOWN",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "sec-ch-ua-platform",
+										"value": "\"Windows\""
+									},
+									{
+										"key": "Referer",
+										"value": "https://disputes.tst.internal.w2m.com/"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "sec-ch-ua",
+										"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"bp\":\"900017562\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/v1/bp-manager/check",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"bp-manager",
+										"check"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BP UNKNOWN",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -156,12 +260,75 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8090/api/v1/bp-manager/check",
+									"raw": "http://localhost:8080/api/v1/bp-manager/check",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8090",
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"bp-manager",
+										"check"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BP ERROR",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "sec-ch-ua-platform",
+										"value": "\"Windows\""
+									},
+									{
+										"key": "Referer",
+										"value": "https://disputes.tst.internal.w2m.com/"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "sec-ch-ua",
+										"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"bp\":\"fail\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/bp-manager/check",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
 									"path": [
 										"api",
 										"v1",
