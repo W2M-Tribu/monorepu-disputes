@@ -790,7 +790,7 @@
                   }
                 },
                 "url": {
-                  "raw": "http://localhost:8080/api/v1/comments/{{disputeId}}/{{commentTypeId}}",
+                  "raw": "http://localhost:8080/api/v1/comments/{{disputeId}}",
                   "protocol": "http",
                   "host": [
                     "localhost"
@@ -800,8 +800,7 @@
                     "api",
                     "v1",
                     "comments",
-                    "{{disputeId}}",
-                    "{{commentTypeId}}"
+                    "{{disputeId}}"
                   ]
                 }
               },
@@ -1261,7 +1260,7 @@
               }
             },
             "url": {
-              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/comments/{{disputeId}}/{{commentTypeId}}",
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/comments/{{disputeId}}",
               "protocol": "https",
               "host": [
                 "tst-api",
@@ -1274,8 +1273,7 @@
                 "api",
                 "v1",
                 "comments",
-                "{{disputeId}}",
-                "{{commentTypeId}}"
+                "{{disputeId}}"
               ]
             }
           },
