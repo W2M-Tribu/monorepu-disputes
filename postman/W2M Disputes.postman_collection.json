@@ -10,40 +10,6 @@
       "name": "LOCAL",
       "item": [
         {
-          "name": "SnowflakeApi",
-          "item": [
-            {
-              "name": "snowflake - endpoint",
-              "request": {
-                "auth": {
-                  "type": "bearer",
-                  "bearer": [
-                    {
-                      "key": "token",
-                      "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSU0RIQjRTMHRJMnRjU092MkFwRmpMb0pzN0dhdUlBWm9HQnROU0ZyTTlzIn0.eyJleHAiOjE3NTMzNDc2NjgsImlhdCI6MTc1MzM0NzM2OCwianRpIjoiZDM3ZTFjMjktMzY4NC00NmVjLWI3NDgtMTlhNGM1OGFmNmQ2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL3JlYWxtcy93Mm0tZGlzcHV0ZXMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZGJkOTU4YWYtNWNhYy00YmFlLWE1NTktY2VmYTVkNmQ4N2JmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWRnZS1zZXJ2aWNlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdzJtLWRpc3B1dGVzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lZGdlLXNlcnZpY2UiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjIwLjAuMSIsImNsaWVudF9pZCI6ImVkZ2Utc2VydmljZSJ9.RruTtYaq-eF2VO2wWPwSEn7irObarXr4VsPcrNuWnmgNCvDT90v-J-vY9NrrexfpZtta4hStWnA7M7zLzCe8hKGyMOGZkXW9yX4NOa4iUGNv5jDz-MWQwTcWVlrRb0vo7y99_UHG3u8C8LhYXmbNeuLpX8FB94D3lRcl81ZdclrkiZIxx25XKsAK6XwH1kGn0jP4iCQ6zgZarRmLO3Fn7nJmkweYiIg0-yExIAQODNHlVslAayHWY3vKYFpKop7GTJOt6ly_QnKXtVIGahi5zeOQWBfi2HSzAklkL0SJinN-ioOsXSrHNSgh2fgJqQyTlJing1dBto2qdk3a4RAD0Q",
-                      "type": "string"
-                    }
-                  ]
-                },
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:8081/test-snowflake",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "8081",
-                  "path": [
-                    "test-snowflake"
-                  ]
-                }
-              },
-              "response": []
-            }
-          ]
-        },
-        {
           "name": "Disputes",
           "item": [
             {
@@ -408,7 +374,7 @@
               "response": []
             },
             {
-              "name": "Status",
+              "name": "Change Status",
               "request": {
                 "auth": {
                   "type": "noauth"
@@ -422,7 +388,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"dsapStateId\": \"REJECTED\",\n    \"dsapStateDescription\": \"Cerrado\"\n} ",
+                  "raw": "{\n    \"ids\": [\"058\"],\n    \"dsapStateId\": \"OPEN\",\n    \"dsapStateDescription\": \"Abierta\",\n    \"comment\": \"Abrir\"\n} ",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -671,30 +637,6 @@
               "response": []
             },
             {
-              "name": "Get Managers",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:8080/api/v1/manager",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "8080",
-                  "path": [
-                    "api",
-                    "v1",
-                    "manager"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
               "name": "Change Manager",
               "request": {
                 "auth": {
@@ -805,8 +747,167 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "Get statuses resolved",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/statuses/resolved",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "statuses",
+                    "resolved"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Ar Managers",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/ar-managers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "ar-managers"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Dispute Managers",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes-managers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes-managers"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Dispute Managers Assignments",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes-managers-assignments",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes-managers-assignments"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Dispute",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"disputeManagers\": [\n    {\n      \"disputeManagerId\": \"dm-001\",\n      \"arManagerIds\": [\"ar-001\", \"ar-004\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-002\",\n      \"arManagerIds\": []\n    },\n    {\n      \"disputeManagerId\": \"dm-003\",\n      \"arManagerIds\": [\"ar-003\", \"ar-005\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-004\",\n      \"arManagerIds\": [\"ar-002\"]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes-managers-assignments",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes-managers-assignments"
+                  ]
+                }
+              },
+              "response": []
             }
           ]
+        },
+        {
+          "name": "Get all statuses",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/statuses",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "statuses"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -1278,6 +1379,170 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "Update Dispute",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"disputeManagers\": [\n    {\n      \"disputeManagerId\": \"dm-001\",\n      \"arManagerIds\": [\"ar-001\", \"ar-004\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-002\",\n      \"arManagerIds\": []\n    },\n    {\n      \"disputeManagerId\": \"dm-003\",\n      \"arManagerIds\": [\"ar-003\", \"ar-005\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-004\",\n      \"arManagerIds\": [\"ar-002\"]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes-managers-assignments",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes-managers-assignments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Dispute Managers Assignments",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes-managers-assignments",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes-managers-assignments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Dispute Managers",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes-managers",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes-managers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Ar Managers",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/ar-managers",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "ar-managers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Status",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\"055\"],\n    \"dsapStateId\": \"OPEN\",\n    \"dsapStateDescription\": \"Abierta\",\n    \"comment\": \"cambiar estado\"\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/dsapstate",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "lots",
+                "dsapstate"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -1422,53 +1687,6 @@
                 "integration",
                 "protocol",
                 "openid-connect",
-                "token"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Login Snowflake",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              },
-              {
-                "key": "Authorization",
-                "value": "Basic ZmJlZTkwNzQtZTVmZi00NzU0LWI2MjYtZDJhMDdiYTJhNzQ4OkdCcDhRfkJ3U0tfUGM0R2tZN1Q1blBPbjJPaWFIREliVnMxLVJiaUs="
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "value": "client_credentials",
-                  "type": "text"
-                },
-                {
-                  "key": "scope",
-                  "value": "https://graph.microsoft.com/.default",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": {
-              "raw": "https://login.microsoftonline.com/a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1/oauth2/v2.0/token",
-              "protocol": "https",
-              "host": [
-                "login",
-                "microsoftonline",
-                "com"
-              ],
-              "path": [
-                "a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1",
-                "oauth2",
-                "v2.0",
                 "token"
               ]
             }
