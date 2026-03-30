@@ -1,0 +1,1685 @@
+{
+  "info": {
+    "_postman_id": "52f4a0f5-2eef-4199-aaf1-2943925f4511",
+    "name": "W2M Disputes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39902897"
+  },
+  "item": [
+    {
+      "name": "LOCAL",
+      "item": [
+        {
+          "name": "Disputes",
+          "item": [
+            {
+              "name": "w2m-disputes-service",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/dispute/001",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dispute",
+                    "001"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CREATE CORRECT",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "data",
+                      "value": "{\n  \"bp\": \"BP-10001\",\n  \"emails\": [\n    \"valid@example.com\",\n    \"fjcuenase@gmail.com\"\n  ]\n}",
+                      "contentType": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/C:/Users/dgp8/Downloads/correct.xlsx"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/dispute-creation/create",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dispute-creation",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CREATE INCORRECT EMPTY",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "data",
+                      "value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
+                      "contentType": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/C:/Users/FranciscoJavierCuena/Plexus Tech/Plexus W2M Gestión de disputas - Documentos/[continuous_evolution]/continuous_execution/continuous_integration/develop/postman-tests/alta/incorrect - empty.xlsx"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/dispute-creation/create",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dispute-creation",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "BP KNOWN",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"Windows\""
+                  },
+                  {
+                    "key": "Referer",
+                    "value": "https://disputes.tst.internal.w2m.com/"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json, text/plain, */*"
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"bp\":\"BP-10001\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/bp-manager/check",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "bp-manager",
+                    "check"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "BP UNKNOWN",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"Windows\""
+                  },
+                  {
+                    "key": "Referer",
+                    "value": "https://disputes.tst.internal.w2m.com/"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json, text/plain, */*"
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"bp\":\"67\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/bp-manager/check",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "bp-manager",
+                    "check"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "BP ERROR",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"Windows\""
+                  },
+                  {
+                    "key": "Referer",
+                    "value": "https://disputes.tst.internal.w2m.com/"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json, text/plain, */*"
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"bp\":\"fail\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/bp-manager/check",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "bp-manager",
+                    "check"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PAGINATION",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"pagination\": {\r\n    \"page\": 1,\r\n    \"collectionSize\": 10,\r\n    \"sortField\": \"id\",\r\n    \"sortOrder\": \"desc\"\r\n  }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/supplier/filter",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "supplier",
+                    "filter"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Recategorize",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"ids\": [\"001\", \"002\", \"003\"],\r\n    \"categoryId\": \"037\",\r\n    \"categoryDescription\": \"No reembolsable\"\r\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/lots/recategorize",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "lots",
+                    "recategorize"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Change Status",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"ids\": [\"058\"],\n    \"dsapStateId\": \"OPEN\",\n    \"dsapStateDescription\": \"Abierta\",\n    \"comment\": \"Abrir\"\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/lots/dsapstate",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "lots",
+                    "dsapstate"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Export excel",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"ids\": [\"004\", \"005\", \"015\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/lots/export",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "lots",
+                    "export"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "List History",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/history/{{disputeId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "history",
+                    "{{disputeId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "List Documents",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{disputeId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{disputeId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Upload Document",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"disputeId\": \"{{disputeId}}\",\n  \"fileName\": \"test.pdf\",\n  \"manager\": \"manager-1\",\n  \"fileType\": \"application/pdf\",\n  \"fileContent\": \"JVBERi0xLjcKCjEgMCBvYmoKPDwvVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCgozIDAgb2JqCjw8L1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA1OTUgODQyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCgo0IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUxCi9CYXNlRm9udCAvSGVsdmV0aWNhCj4+CmVuZG9iagoKNSAwIG9iago8PC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAyNCBUZgooSGVsbG8gV29ybGQhKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCgp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTAgMDAwMDAgbiAKMDAwMDAwMDA2MCAwMDAwMCBuIAowMDAwMDAwMTU3IDAwMDAwIG4gCjAwMDAwMDAzMDYgMDAwMDAgbiAKMDAwMDAwMDM5MyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNgovUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDg3CiUlRU9GCg==\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/upload",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "upload"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Download Document",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{documentId}}/download",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{documentId}}",
+                    "download"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Document",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{documentId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{documentId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Open Document",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{documentId}}/open",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{documentId}}",
+                    "open"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Change Manager",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"comment\": \"Cambio manager\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/manager/change/{{disputeId}}/{{disputeManagerId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "manager",
+                    "change",
+                    "{{disputeId}}",
+                    "{{disputeManagerId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Close Dispute",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes/close/{{disputeId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes",
+                    "close",
+                    "{{disputeId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Dispute Detail",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes/{{disputeId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes",
+                    "{{disputeId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Add Comment",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"comment\": \"Nota interna creada por API\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/comments/{{disputeId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "comments",
+                    "{{disputeId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get statuses resolved",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/statuses/resolved",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "statuses",
+                    "resolved"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Ar Managers",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/ar-managers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "ar-managers"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Dispute Managers",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes-managers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes-managers"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Dispute Managers Assignments",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes-managers-assignments",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes-managers-assignments"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Dispute",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"disputeManagers\": [\n    {\n      \"disputeManagerId\": \"dm-001\",\n      \"arManagerIds\": [\"ar-001\", \"ar-004\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-002\",\n      \"arManagerIds\": []\n    },\n    {\n      \"disputeManagerId\": \"dm-003\",\n      \"arManagerIds\": [\"ar-003\", \"ar-005\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-004\",\n      \"arManagerIds\": [\"ar-002\"]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes-managers-assignments",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes-managers-assignments"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get all statuses",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/statuses",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "statuses"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TST",
+      "item": [
+        {
+          "name": "TST-BP",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "Referer",
+                "value": "https://disputes.tst.internal.w2m.com/"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bp\":\"67\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/bp-manager/check",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "bp-manager",
+                "check"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TST-CREATE",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "data",
+                  "value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
+                  "contentType": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/dgp8/Desktop/incorrecto.xlsx"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/dispute-creation/create",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "dispute-creation",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PAGINATION",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pagination\": {\n    \"page\": 1,\n    \"collectionSize\": 25,\n    \"sortField\": \"id\",\n    \"sortOrder\": \"desc\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/supplier/filter",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "supplier",
+                "filter"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/history/{{disputeId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "history",
+                "{{disputeId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Documents",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{disputeId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{disputeId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload Document",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"disputeId\": \"{{disputeId}}\",\n  \"fileName\": \"test.pdf\",\n  \"manager\": \"manager-10\",\n  \"fileType\": \"application/pdf\",\n  \"fileContent\": \"JVBERi0xLjcKCjEgMCBvYmoKPDwvVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCgozIDAgb2JqCjw8L1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA1OTUgODQyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCgo0IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUxCi9CYXNlRm9udCAvSGVsdmV0aWNhCj4+CmVuZG9iagoKNSAwIG9iago8PC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAyNCBUZgooSGVsbG8gV29ybGQhKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCgp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTAgMDAwMDAgbiAKMDAwMDAwMDA2MCAwMDAwMCBuIAowMDAwMDAwMTU3IDAwMDAwIG4gCjAwMDAwMDAzMDYgMDAwMDAgbiAKMDAwMDAwMDM5MyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNgovUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDg3CiUlRU9GCg==\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/upload",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Download Document",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{documentId}}/download",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{documentId}}",
+                "download"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Document",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{documentId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{documentId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Open Document",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{documentId}}/open",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{documentId}}",
+                "open"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Managers",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/manager",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "manager"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Manager",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment\": \"Cambio manager\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/manager/change/{{disputeId}}/{{managerId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "manager",
+                "change",
+                "{{disputeId}}",
+                "{{managerId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Close Dispute",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes/close/{{disputeId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes",
+                "close",
+                "{{disputeId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Dispute Detail",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes/{{disputeId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes",
+                "{{disputeId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Comment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comment\": \"Nota interna creada por API\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/comments/{{disputeId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "comments",
+                "{{disputeId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Dispute",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"disputeManagers\": [\n    {\n      \"disputeManagerId\": \"dm-001\",\n      \"arManagerIds\": [\"ar-001\", \"ar-004\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-002\",\n      \"arManagerIds\": []\n    },\n    {\n      \"disputeManagerId\": \"dm-003\",\n      \"arManagerIds\": [\"ar-003\", \"ar-005\"]\n    },\n    {\n      \"disputeManagerId\": \"dm-004\",\n      \"arManagerIds\": [\"ar-002\"]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes-managers-assignments",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes-managers-assignments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Dispute Managers Assignments",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes-managers-assignments",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes-managers-assignments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Dispute Managers",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/disputes-managers",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "disputes-managers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Ar Managers",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/ar-managers",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "ar-managers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Status",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\"055\"],\n    \"dsapStateId\": \"OPEN\",\n    \"dsapStateDescription\": \"Abierta\",\n    \"comment\": \"cambiar estado\"\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/dsapstate",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "lots",
+                "dsapstate"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "MOCKSERVER",
+      "item": [
+        {
+          "name": "SAP",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
+              "protocol": "https",
+              "host": [
+                "mockserver",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "disputes",
+                "sap",
+                "api",
+                "v1",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "IA",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
+              "protocol": "https",
+              "host": [
+                "mockserver",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "disputes",
+                "ia",
+                "api",
+                "v1",
+                "category"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Snowflake - Consulta válida",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"statement\": \"SELECT * FROM usuarios\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
+              "protocol": "https",
+              "host": [
+                "mockserver",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "disputes",
+                "snowflake",
+                "api",
+                "v2",
+                "statements"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "LOGIN",
+      "item": [
+        {
+          "name": "Login Disputes",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "team-finance",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "6FONUFUFLbhFiBUkUC7X2mYK7mWbX0Ab",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://pre-auth.w2m.com/auth/realms/integration/protocol/openid-connect/token",
+              "protocol": "https",
+              "host": [
+                "pre-auth",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "integration",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "commentTypeId",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
